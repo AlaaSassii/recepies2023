@@ -1,0 +1,25 @@
+@import '../../../scss/main';
+.footer{
+    padding: 40px 0;
+    background-color: var(--component-bg-color);
+    color: var(--text-color);
+    .creator__info{
+        p{
+            font-size: small;
+            color: var(--text-color);
+        }
+    }
+   
+    .platforms{
+        
+        @include flexWithGap(10px);
+        width: fit-content;
+        margin:auto ;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 30px;
+        a{
+            color:  var(--text-color);
+        }
+    }
+}

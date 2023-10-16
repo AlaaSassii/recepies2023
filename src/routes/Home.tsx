@@ -4,7 +4,6 @@ import Navbar from '../components/common/Navbar/Navbar'
 const Home = () => {
     return (
         <>
-            <Navbar />
         </>
     )
 }
