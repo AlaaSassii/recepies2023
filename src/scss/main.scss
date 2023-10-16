@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,900;1,300;1,400&display=swap');
 @import './variables';
 @import './mixins';
 
@@ -7,6 +8,24 @@
     box-sizing: border-box;
 }
 
+:root[data-theme="theme-light"] {
+  --primary-color: #0072a3;
+  --text-color: #333333;
+  --bg-color: #fafafa;
+  --component-bg-color: #ffffff;
+}
+
+:root[data-theme="theme-dark"] {
+  --primary-color: #49afd9;
+  --text-color: #e3f5fc;
+  --bg-color: #1b2a32;
+  --component-bg-color: #22343c;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+}
 .container {
     padding-right: 15px;
     padding-left: 15px;

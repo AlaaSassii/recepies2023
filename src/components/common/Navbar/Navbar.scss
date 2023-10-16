@@ -1,0 +1,29 @@
+@import '../../../scss/main.scss';
+nav{
+    background-color: var(--component-bg-color);
+    color:var(--text-color);
+    > div{
+        display: flex;
+        justify-content: space-between;
+        height: 72px;
+        align-items: center;
+        .nav__left{
+            @include flexWithGap(5px);
+            font-size: 30px;
+        }
+        .nav__right{
+            @include flexWithGap(10px);
+            >ul{
+                @include flexWithGap(10px);
+                list-style: none;
+                >li>a{
+                    text-decoration: none;
+                }
+            }
+            button{
+                @include button;
+            }
+        }
+    }
+}
+

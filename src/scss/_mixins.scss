@@ -6,4 +6,13 @@
 @mixin flexWithGap($gap){
     display: flex;
     align-items: center;
+    gap: $gap;
+}
+
+
+// elements
+@mixin button{
+        outline: transparent;
+        width: fit-content;
+        padding: 8px
 }
