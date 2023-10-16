@@ -15,8 +15,9 @@ const useGetMealInfo = (id: string | undefined) => {
         setLoading(true)
         axios(`https:www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
             .then((response: AxiosResponse) => {
-                setMeal(response.data);
-                setLoading(false)
+                setMeal(response.data.meals[0]);
+                setLoading(false);
+                console.log(response.data.meals[0]);
             })
             .catch((error: AxiosError) => {
                 setError(error.message)

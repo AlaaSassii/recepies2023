@@ -18,7 +18,7 @@ const MealInfo = () => {
                         <Loading />
                         :
                         <div className="meal__info">
-                            <h1>{Meal?.strDrinkAlternate}</h1>
+                            <h1>{Meal?.strMeal}</h1>
                         </div>
 
             }
