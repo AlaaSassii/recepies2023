@@ -9,7 +9,11 @@
     gap: $gap;
 }
 
-
+@mixin textGradient($c1,$c2) {
+        background: -webkit-linear-gradient($c1, $c2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
 // elements
 @mixin button{
         outline: transparent;

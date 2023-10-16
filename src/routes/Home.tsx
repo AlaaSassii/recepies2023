@@ -1,9 +1,9 @@
-import React from 'react'
-import Navbar from '../components/common/Navbar/Navbar'
+import Welcome from '../components/specify/Welcome'
 
 const Home = () => {
     return (
         <>
+            <Welcome />
         </>
     )
 }
