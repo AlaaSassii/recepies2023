@@ -12,25 +12,26 @@ const useSearchMealByName = () => {
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
     const handleChangeMealValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
-        useEffect(() => {
-            if (debouncedSearchTerm) {
-                setLoading(true);
-                const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedSearchTerm}`;
-                axios.get(apiUrl)
-                    .then((response: AxiosResponse) => {
-                        setSearchResults(response.data.meals || []);
-                        setLoading(false);
-                    })
-                    .catch((error: AxiosError) => {
-                        setError(error.message)
-                        setSearchResults([]);
-                        setLoading(false);
-                    });
-            } else {
-                setSearchResults([]);
-            }
-        })
     };
+
+    useEffect(() => {
+        if (debouncedSearchTerm) {
+            setLoading(true);
+            const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedSearchTerm}`;
+            axios.get(apiUrl)
+                .then((response: AxiosResponse) => {
+                    setSearchResults(response.data.meals || []);
+                    setLoading(false);
+                })
+                .catch((error: AxiosError) => {
+                    setError(error.message)
+                    setSearchResults([]);
+                    setLoading(false);
+                });
+        } else {
+            setSearchResults([]);
+        }
+    }, [debouncedSearchTerm])
     return { searchTerm, searchResults, handleChangeMealValue, loading, error }
 
 }
