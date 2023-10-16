@@ -1,0 +1,32 @@
+@import '../../../scss/main.scss';
+.input__search{
+    width: 400px;
+    background-color:var(----component-bg-color) ;
+    border: 1px solid  #eceece;
+    display: flex;
+    padding: 5px 7px;
+    border-radius: 20px;
+    height: 30px;
+    input{
+        flex: 1;
+        background-color: transparent;
+        outline: transparent;
+        border: none;
+    }
+    button{
+        height: 100%;
+        outline: transparent;
+        border: none;
+        background-color: transparent;
+        @include flexCenter;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+    @media (max-width:798px){
+    width: 300px;
+    input{
+        font-size: small;
+    }
+
+    }
+}

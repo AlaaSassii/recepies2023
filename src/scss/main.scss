@@ -10,15 +10,15 @@
 
 :root[data-theme="theme-light"] {
   --primary-color: #0072a3;
-  --text-color: #333333;
   --bg-color: #fafafa;
+  --text-color: #333333;
   --component-bg-color: #ffffff;
 }
 
 :root[data-theme="theme-dark"] {
   --primary-color: #49afd9;
-  --text-color: #e3f5fc;
   --bg-color: #252525;
+  --text-color: #e3f5fc;
   --component-bg-color: #202020 ;
 }
 

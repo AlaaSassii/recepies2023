@@ -2,10 +2,11 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './routes/Home'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
+import InputSearch from './components/common/InputSearch'
 const App = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
 
       <Routes>
         <Route path='/' element={<Home />} />
@@ -15,7 +16,8 @@ const App = () => {
       <br />
       <br />
       <br />
-      <Footer />
+      <Footer /> */}
+      <InputSearch />
     </>
   )
 }
