@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import './MealCard.scss';
+import { useNavigate } from 'react-router-dom';
 type MealCardProps = {
     idMeal: string,
     strMeal: string,
@@ -16,6 +17,7 @@ const MealCard: FC<MealCardProps> = (
         strArea,
         strCategory,
     }) => {
+    let navigate = useNavigate();
     return (
         <div className='meal__card'>
             <img src={strMealThumb} alt="" />
@@ -24,7 +26,7 @@ const MealCard: FC<MealCardProps> = (
                 <p><b>From:</b>{strArea}</p>
                 <p>{strCategory}</p>
             </div>
-            <button onClick={() => console.log(idMeal)}>Look More</button>
+            <button onClick={() => navigate(`/meal/${idMeal}`)}>Look More</button>
         </div>
     )
 }
