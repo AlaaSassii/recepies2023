@@ -13,7 +13,7 @@ const useTheme = () => {
         document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 
-    return { toggleTheme };
+    return { theme, toggleTheme };
 };
 
 export default useTheme;
