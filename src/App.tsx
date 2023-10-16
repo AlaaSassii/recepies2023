@@ -3,6 +3,7 @@ import Home from './routes/Home'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
 import InputSearch from './components/common/InputSearch'
+import MealCard from './components/specify/MealCard'
 const App = () => {
   return (
     <>
@@ -17,7 +18,8 @@ const App = () => {
       <br />
       <br />
       <Footer /> */}
-      <InputSearch />
+      {/* <InputSearch /> */}
+      <MealCard />
     </>
   )
 }

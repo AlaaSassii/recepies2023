@@ -4,7 +4,7 @@ import './InputSearch.scss'
 type InputSearchProps = {
     value: string,
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
-    handleClick: () => void,
+    handleClick?: () => void,
 }
 const InputSearch: FC<InputSearchProps> = ({ value, handleChange, handleClick }) => {
     return (
