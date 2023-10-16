@@ -2,24 +2,21 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './routes/Home'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
-import InputSearch from './components/common/InputSearch'
-import MealCard from './components/specify/MealCard'
+import SearchMeal from './routes/SearchMeal'
 const App = () => {
   return (
     <>
-      {/* <Navbar />
-
+      <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/search-meals' element={<SearchMeal />} />
       </Routes>
       <br />
       <br />
       <br />
       <br />
       <br />
-      <Footer /> */}
-      {/* <InputSearch /> */}
-      <MealCard />
+      <Footer />
     </>
   )
 }

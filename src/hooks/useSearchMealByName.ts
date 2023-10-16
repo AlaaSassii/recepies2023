@@ -3,6 +3,7 @@ import { Meals } from '../types/meals';
 import { useDebounce } from './useDebounce';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
+
 const useSearchMealByName = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [searchResults, setSearchResults] = useState<Meals>([]);
@@ -29,8 +30,8 @@ const useSearchMealByName = () => {
                 setSearchResults([]);
             }
         })
-        return { searchTerm, searchResults, handleChangeMealValue, loading, error }
     };
+    return { searchTerm, searchResults, handleChangeMealValue, loading, error }
 
 }
 
