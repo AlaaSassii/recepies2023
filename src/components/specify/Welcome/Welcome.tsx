@@ -1,4 +1,4 @@
-
+import './Welcome.scss'
 const Welcome = () => {
     return (
         <div className='welcome'>

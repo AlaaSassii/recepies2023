@@ -10,9 +10,10 @@
 }
 
 @mixin textGradient($c1,$c2) {
-        background: -webkit-linear-gradient($c1, $c2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, $c1, $c2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 // elements
 @mixin button{
