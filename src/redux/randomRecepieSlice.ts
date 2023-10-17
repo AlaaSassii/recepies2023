@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
 import { recepie } from "../types/meals";
-import type { PayloadAction } from '@reduxjs/toolkit'
-
 
 type initialStateType = {
     randomRecepie: recepie | undefined,
