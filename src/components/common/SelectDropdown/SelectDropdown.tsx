@@ -7,15 +7,14 @@ type SelectDropDownProps = {
     dropDownTilte: string,
     loading: boolean
 }
-const SelectDropdown: FC<SelectDropDownProps> = ({ elements: e, dropDownTilte, loading }) => {
+const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading }) => {
     const {
         handleInputChange,
         inputValue,
         selectElement,
         showElements,
         toggleShowElements,
-        elements,
-    } = useSelectDropdown(e)
+    } = useSelectDropdown()
 
     return (
         <div className="select__dropdown">
@@ -30,12 +29,12 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements: e, dropDownTilte, l
                 <button onClick={toggleShowElements}>{showElements ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}</button>
             </div>
             {
-                (showElements && loading)
+                (showElements && !loading)
                     ?
                     <div className="not__selected__elements">
                         {elements
                             .filter(element => element.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase()))
-                            .map(element => <div key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</div>)}
+                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</h1>)}
                     </div >
                     :
                     null

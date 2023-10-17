@@ -2,6 +2,4 @@ export type category = {
     strCategory: string
 }
 
-export type categoriesType = {
-    meals: category[]
-}
+export type categoriesType = category[]

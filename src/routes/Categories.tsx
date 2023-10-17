@@ -1,10 +1,9 @@
-import React from 'react'
 import useGetCategories from '../hooks/useGetCategories'
 import SelectDropdown from '../components/common/SelectDropdown';
 
 const Categories = () => {
     const { value, loading, error } = useGetCategories();
-    console.log({ value, loading, error })
+
     return (
         <div>
             {
@@ -18,7 +17,7 @@ const Categories = () => {
                         :
                         <SelectDropdown
                             dropDownTilte='categories..'
-                            elements={value?.meals?.map(c => c?.strCategory) || []}
+                            elements={value?.map(v => v.strCategory) || []}
                             loading={loading}
                             key='categorie'
                         />
