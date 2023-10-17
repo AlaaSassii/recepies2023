@@ -63,7 +63,7 @@ export const getAreas = createAsyncThunk('areas', async () => {
     }
 })
 
-export const getIngredients = createAsyncThunk('areas', async () => {
+export const getIngredients = createAsyncThunk('ingredients', async () => {
     try {
         const apiUrl = `https://www.themealdb.com/api/json/v1/1/list.php?i=list`;
         const response: AxiosResponse = await axios.get(apiUrl);
@@ -78,7 +78,6 @@ const cuisineSlice = createSlice({
     name: 'cuisine',
     initialState,
     reducers: {
-
     },
     extraReducers: (builder) => {
         builder

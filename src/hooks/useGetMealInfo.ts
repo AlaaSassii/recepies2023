@@ -4,9 +4,7 @@ import { recepie } from '../types/meals';
 import { AxiosResponse } from 'axios';
 
 const useGetMealInfo = (id: string | undefined) => {
-    if (!id) {
-        return { Meal: undefined, loading: false, error: 'something went wrong!' }
-    }
+    if (!id) return { Meal: undefined, loading: false, error: 'something went wrong!' }
     const [Meal, setMeal] = useState<recepie | undefined>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
