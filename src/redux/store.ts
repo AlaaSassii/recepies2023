@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import recepiesReducer from './searchRecepielByNameSlice'
+import recepiesReducer from './recepiesByNameSlice'
 import randomRecepieReducer from './randomRecepieSlice';
 import cuisineReducer from './cuisineSlice';
 
 const store = configureStore({
     reducer: {
-        recepies: recepiesReducer,
+        recepiesName: recepiesReducer,
         randomRecepies: randomRecepieReducer,
         cuisine: cuisineReducer
     },
