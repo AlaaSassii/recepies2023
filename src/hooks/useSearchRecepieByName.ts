@@ -21,4 +21,3 @@ const useSearchRecepieByName = () => {
 }
 
 export default useSearchRecepieByName
-// useSearchMealByName
