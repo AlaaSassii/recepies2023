@@ -20,4 +20,5 @@ const useSearchRecepieByName = () => {
 
 }
 
-export default useSearchRecepieByName 
+export default useSearchRecepieByName
+// useSearchMealByName
