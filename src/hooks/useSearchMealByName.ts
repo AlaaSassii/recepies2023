@@ -1,39 +1,23 @@
-import { useState, useEffect } from 'react'
-import { recepies } from '../types/meals';
+import { useEffect } from 'react'
 import { useDebounce } from './useDebounce';
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import { useAppDispatch } from './useAppDispatch';
+import { useAppSelector } from './useAppSelector';
+import { changeName, getRecepies } from '../redux/searchRecepielByNameSlice';
 
-
-const useSearchMealByName = () => {
-    const [searchTerm, setSearchTerm] = useState<string>('');
-    const [searchResults, setSearchResults] = useState<recepies>([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-    const debouncedSearchTerm = useDebounce(searchTerm, 500);
+const useSearchRecepieByName = () => {
+    const dispatch = useAppDispatch();
+    const { recepies, error, loading, name } = useAppSelector(state => state.recepies);
+    const debouncedSearchTerm = useDebounce(name, 500);
     const handleChangeMealValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-    };
-
+        dispatch(changeName(e))
+    }
     useEffect(() => {
         if (debouncedSearchTerm) {
-            setLoading(true);
-            const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedSearchTerm}`;
-            axios.get(apiUrl)
-                .then((response: AxiosResponse) => {
-                    setSearchResults(response.data.meals || []);
-                    setLoading(false);
-                })
-                .catch((error: AxiosError) => {
-                    setError(error.message)
-                    setSearchResults([]);
-                    setLoading(false);
-                });
-        } else {
-            setSearchResults([]);
+            getRecepies(debouncedSearchTerm)
         }
     }, [debouncedSearchTerm])
-    return { searchTerm, searchResults, handleChangeMealValue, loading, error }
+    return { recepies, error, loading, name, handleChangeMealValue }
 
 }
 
-export default useSearchMealByName
+export default useSearchRecepieByName 
