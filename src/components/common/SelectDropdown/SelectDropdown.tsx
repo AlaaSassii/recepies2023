@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import { FC } from "react"
 import useSelectDropdown from "../../../hooks/useSelectDropdown"
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md"
 import { AiOutlineClose } from "react-icons/ai"
@@ -21,7 +21,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte }) =>
                         value={inputValue}
                     />
                     {
-                        selectedElements.map(v => <div key={`${v}__notSlected`}><div>{v}</div><button onClick={() => deSelectSelectedElement(v)}><AiOutlineClose /></button></div>)
+                        <div ><div>{selectedElements}</div><button onClick={() => deSelectSelectedElement(selectedElements)}><AiOutlineClose /></button></div>
                     }
                 </div>
                 <button onClick={toggleShowElements}>{showElements ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}</button>

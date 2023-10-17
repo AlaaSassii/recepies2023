@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { sortArrayAlphabetically } from '../helper/sortArrayAlphabitically';
 
 const useSelectDropdown = (elements: string[]) => {
     const [inputValue, setInputValue] = useState<string>('');
     const [notSelectedElements, setNotSelectedElements] = useState<string[]>(elements);
-    const [selectedElements, setSelectedElements] = useState<string[]>([]);
+    const [selectedElements, setSelectedElements] = useState('');
     const [showElements, setShowElements] = useState(false)
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
@@ -14,12 +15,12 @@ const useSelectDropdown = (elements: string[]) => {
     }
 
     const selectElement = (element: string) => {
-        setSelectedElements([...selectedElements, element]);
+        setSelectedElements(element);
         setNotSelectedElements(notSelectedElements.filter(v => v !== element));
     }
     const deSelectSelectedElement = (element: string) => {
-        setNotSelectedElements([...notSelectedElements, element]);
-        setSelectedElements(selectedElements.filter(v => v !== element));
+        setNotSelectedElements(sortArrayAlphabetically([...notSelectedElements, element]));
+        setSelectedElements('');
 
     }
 
