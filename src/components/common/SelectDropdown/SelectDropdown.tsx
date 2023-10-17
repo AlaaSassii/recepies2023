@@ -33,7 +33,9 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements: e, dropDownTilte, l
                 (showElements && loading)
                 &&
                 <div className="not__selected__elements">
-                    {elements.map(element => <div key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</div>)}
+                    {elements
+                        .filter(element => element.includes(inputValue))
+                        .map(element => <div key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</div>)}
                 </div >
 
             }
