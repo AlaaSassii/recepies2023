@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
 import { recepiesCuisineType } from "../types/recepiesCuisineType";
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 type initialStateType = {
@@ -33,7 +34,9 @@ const recepiesSlice = createSlice({
     name: 'recepiesIngredient',
     initialState,
     reducers: {
-
+        changeSearchValue(state, action: PayloadAction<React.ChangeEvent<HTMLInputElement>>) {
+            state.valueSearch = action.payload.target.value
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -54,3 +57,4 @@ const recepiesSlice = createSlice({
 })
 
 export default recepiesSlice.reducer
+export const { changeSearchValue } = recepiesSlice.actions
