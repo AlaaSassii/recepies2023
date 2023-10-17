@@ -6,7 +6,9 @@ const useGetAreas = () => {
     const dispatch = useAppDispatch();
     const { error, loading, value } = useAppSelector(state => state.cuisine.area);
     useEffect(() => {
-        dispatch(getAreas())
+        if (!value) {
+            dispatch(getAreas())
+        }
     }, [])
     return { value, loading, error }
 }

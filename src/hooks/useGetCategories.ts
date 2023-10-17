@@ -6,7 +6,9 @@ const useGetCategories = () => {
     const dispatch = useAppDispatch();
     const { error, loading, value } = useAppSelector(state => state.cuisine.category);
     useEffect(() => {
-        dispatch(getCategories())
+        if (!value) {
+            dispatch(getCategories())
+        }
     }, [])
     return { value, loading, error }
 }

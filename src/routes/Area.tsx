@@ -1,4 +1,3 @@
-import React from 'react'
 import useGetAreas from '../hooks/useGetAreas';
 import SelectDropdown from '../components/common/SelectDropdown';
 
@@ -17,8 +16,8 @@ const Area = () => {
                         <p>loading..</p>
                         :
                         <SelectDropdown
-                            dropDownTilte='categories..'
-                            elements={value?.map(v => v.strCategory) || []}
+                            dropDownTilte='areas..'
+                            elements={value?.map(v => v.strArea) || []}
                             loading={loading}
                             key='categorie'
                         />

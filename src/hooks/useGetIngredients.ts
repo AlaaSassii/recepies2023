@@ -6,7 +6,9 @@ const useGetIngredients = () => {
     const dispatch = useAppDispatch();
     const { error, loading, value } = useAppSelector(state => state.cuisine.ingredient);
     useEffect(() => {
-        dispatch(getIngredients())
+        if (!value) {
+            dispatch(getIngredients())
+        }
     }, [])
     return { value, loading, error }
 }
