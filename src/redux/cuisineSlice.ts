@@ -39,6 +39,37 @@ const initialState: initialStateType = {
         loading: false,
         error: '',
     },
-
-
 }
+
+export const getCategories = createAsyncThunk('categories', async () => {
+    try {
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/list.php?c=list`;
+        const response: AxiosResponse = await axios.get(apiUrl);
+        return response.data
+    }
+    catch (error) {
+        throw error
+    }
+})
+
+export const getAreas = createAsyncThunk('areas', async () => {
+    try {
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/list.php?a=list`;
+        const response: AxiosResponse = await axios.get(apiUrl);
+        return response.data
+    }
+    catch (error) {
+        throw error
+    }
+})
+
+export const getIngredients = createAsyncThunk('areas', async () => {
+    try {
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/list.php?i=list`;
+        const response: AxiosResponse = await axios.get(apiUrl);
+        return response.data
+    }
+    catch (error) {
+        throw error
+    }
+})
