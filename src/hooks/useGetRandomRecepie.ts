@@ -1,28 +1,20 @@
-import { useState, useEffect } from 'react'
-import { recepie } from '../types/meals';
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import { useEffect } from 'react'
+import { useAppDispatch } from './useAppDispatch';
+import { useAppSelector } from './useAppSelector';
+import { getRadnomRecepie } from '../redux/randomRecepieSlice';
 
 const useGetRandomRecepie = () => {
-    const [randomRecepie, setRandomRecepie] = useState<undefined | recepie>(undefined);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-    const getRadomRecepie = () => {
-        setLoading(true);
-        axios(`https://www.themealdb.com/api/json/v1/1/random.php`)
-            .then((response: AxiosResponse) => {
-                setLoading(false);
-                console.log(response.data);
-                setRandomRecepie(randomRecepie)
-            })
-            .catch((error: AxiosError) => {
-                setLoading(false);
-                setError(error.message)
-            })
+    const dispatch = useAppDispatch();
+    const { error, loading, randomRecepie } = useAppSelector(state => state.randomRecepies);
+    const getRandomRecpieFunction = () => {
+        dispatch(getRadnomRecepie());
     }
     useEffect(() => {
-        getRadomRecepie()
-    }, [])
-    return { randomRecepie, loading, error, getRadomRecepie }
+        if (randomRecepie === undefined) {
+            getRandomRecpieFunction();
+        }
+    }, []);
+    return { randomRecepie, error, loading, getRandomRecpieFunction };
 }
 
 export default useGetRandomRecepie
