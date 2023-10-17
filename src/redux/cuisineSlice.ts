@@ -73,3 +73,58 @@ export const getIngredients = createAsyncThunk('areas', async () => {
         throw error
     }
 })
+
+const cuisineSlice = createSlice({
+    name: 'cuisine',
+    initialState,
+    reducers: {
+
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getCategories.pending, (state) => {
+                state.category.loading = true;
+                state.category.error = '';
+            })
+            .addCase(getCategories.fulfilled, (state, action) => {
+                state.category.loading = false;
+                state.category.value = action.payload.meals;
+                state.category.error = '';
+            })
+            .addCase(getCategories.rejected, (state, action) => {
+                state.category.loading = false;
+                state.category.error = action.error.message || 'An error occurred.';
+            })
+
+            .addCase(getAreas.pending, (state) => {
+                state.area.loading = true;
+                state.area.error = '';
+            })
+            .addCase(getAreas.fulfilled, (state, action) => {
+                state.area.loading = false;
+                state.area.value = action.payload.meals;
+                state.area.error = '';
+            })
+            .addCase(getAreas.rejected, (state, action) => {
+                state.area.loading = false;
+                state.area.error = action.error.message || 'An error occurred.';
+            })
+
+            .addCase(getIngredients.pending, (state) => {
+                state.ingredient.loading = true;
+                state.ingredient.error = '';
+            })
+            .addCase(getIngredients.fulfilled, (state, action) => {
+                state.ingredient.loading = false;
+                state.ingredient.value = action.payload.meals;
+                state.ingredient.error = '';
+            })
+            .addCase(getIngredients.rejected, (state, action) => {
+                state.ingredient.loading = false;
+                state.ingredient.error = action.error.message || 'An error occurred.';
+            })
+    }
+
+})
+
+export default cuisineSlice.reducer
