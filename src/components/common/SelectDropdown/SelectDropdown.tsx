@@ -8,7 +8,15 @@ type SelectDropDownProps = {
     dropDownTilte: string
 }
 const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte }) => {
-    const { deSelectSelectedElement, handleInputChange, inputValue, selectElement, showElements, toggleShowElements, notSelectedElements, selectedElements } = useSelectDropdown(elements)
+    const {
+        deSelectSelectedElement,
+        handleInputChange,
+        inputValue,
+        selectElement,
+        showElements,
+        toggleShowElements,
+        notSelectedElements,
+        selectedElements } = useSelectDropdown(elements)
 
     return (
         <div className="select__dropdown">
