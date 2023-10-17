@@ -2,13 +2,13 @@ import InputSearch from '../components/common/InputSearch'
 import Loading from '../components/common/Loading';
 import PageContainer from '../components/common/PageContainer'
 import MealCard from '../components/specify/MealCard';
-import useSearchMealByName from '../hooks/useSearchMealByName';
+import useSearchRecepieByName from '../hooks/useSearchRecepieByName';
 
 const SearchMeal = () => {
-    const { searchTerm, searchResults, handleChangeMealValue, loading, error } = useSearchMealByName();
+    const { recepies, error, loading, name, handleChangeMealValue } = useSearchRecepieByName();
     return (
         <PageContainer>
-            <InputSearch handleChange={handleChangeMealValue} value={searchTerm} />
+            <InputSearch handleChange={handleChangeMealValue} value={name} />
             {
                 error ?
                     <p>error</p>
@@ -19,7 +19,7 @@ const SearchMeal = () => {
                         :
                         <div className='meals__container'>
                             {
-                                searchResults?.map((v, index) => <MealCard
+                                recepies?.map((v, index) => <MealCard
                                     idMeal={v.idMeal}
                                     strMeal={v.strMeal}
                                     strMealThumb={v.strMealThumb}

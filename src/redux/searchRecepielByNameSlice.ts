@@ -45,7 +45,7 @@ const recepiesSlice = createSlice({
             })
             .addCase(getRecepies.fulfilled, (state, action) => {
                 state.loading = false;
-                state.recepies = action.payload;
+                state.recepies = action.payload.meals;
                 state.error = '';
             })
             .addCase(getRecepies.rejected, (state, action) => {

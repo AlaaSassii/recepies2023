@@ -12,9 +12,9 @@ const useSearchRecepieByName = () => {
         dispatch(changeName(e))
     }
     useEffect(() => {
-        if (debouncedSearchTerm) {
-            getRecepies(debouncedSearchTerm)
-        }
+        // if (debouncedSearchTerm) {
+        dispatch(getRecepies(debouncedSearchTerm))
+        // }
     }, [debouncedSearchTerm])
     return { recepies, error, loading, name, handleChangeMealValue }
 

@@ -4,7 +4,11 @@ import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
 import SearchMeal from './routes/SearchMeal'
 import MealInfo from './routes/MealInfo'
+import useSearchRecepieByName from './hooks/useSearchRecepieByName'
 const App = () => {
+  const { error, handleChangeMealValue, loading, name, recepies } = useSearchRecepieByName()
+  console.log({ error, handleChangeMealValue, loading, name, recepies });
+
   return (
     <>
       <Navbar />
