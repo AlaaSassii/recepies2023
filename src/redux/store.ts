@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import recepiesReducer from './searchRecepielByNameSlice'
 const store = configureStore({
     reducer: {
+        recepies: recepiesReducer
     },
 });
 
