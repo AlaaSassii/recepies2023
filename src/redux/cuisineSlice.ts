@@ -1,22 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
-import { categories } from "../types/categoriesType";
-import { areas } from "../types/areaType";
-import { ingredientType, ingredients } from "../types/ingredientType";
+import { categoriesType } from "../types/categoriesType";
+import { areasType } from "../types/areaType";
+import { ingredientsType } from "../types/ingredientType";
 
 type initialStateType = {
     category: {
-        value: categories | undefined,
+        value: categoriesType | undefined,
         loading: boolean,
         error: string,
     },
     area: {
-        value: areas | undefined,
+        value: areasType | undefined,
         loading: boolean,
         error: string,
     },
     ingredient: {
-        value: ingredients | undefined,
+        value: ingredientsType | undefined,
         loading: boolean,
         error: string,
     }

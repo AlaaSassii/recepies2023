@@ -2,6 +2,6 @@ export type area = {
     strArea: string;
 }
 
-export type areas = {
+export type areasType = {
     meals: area[]
 }

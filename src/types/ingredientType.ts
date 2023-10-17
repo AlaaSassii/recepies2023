@@ -5,6 +5,6 @@ export type ingredientType = {
     strType: string | null,
 }
 
-export type ingredients = {
+export type ingredientsType = {
     meals: ingredientType[]
 }
