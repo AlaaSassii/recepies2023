@@ -5,17 +5,15 @@ import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icon
 type SelectDropDownProps = {
     elements: string[],
     dropDownTilte: string,
-    loading: boolean
+    loading: boolean,
+    getRecepie: (elememt: string) => void
 }
-const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading }) => {
-    const {
-        handleInputChange,
-        inputValue,
-        selectElement,
-        showElements,
-        toggleShowElements,
-    } = useSelectDropdown()
-
+const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading, getRecepie }) => {
+    const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, } = useSelectDropdown()
+    const handleSlect = (element: string) => {
+        selectElement(element);
+        getRecepie(element)
+    }
     return (
         <div className="select__dropdown">
             <div className="dropdown__main">
@@ -34,7 +32,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
                     <div className="not__selected__elements">
                         {elements
                             .filter(element => element.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase()))
-                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</h1>)}
+                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => handleSlect(element)}>{element}</h1>)}
                     </div >
                     :
                     null

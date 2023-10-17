@@ -7,12 +7,14 @@ type initialStateType = {
     recepies: recepiesCuisineType | undefined,
     loading: boolean,
     error: string,
+    valueSearch: string
 }
 
 const initialState: initialStateType = {
     recepies: undefined,
     loading: false,
     error: '',
+    valueSearch: ''
 }
 
 export const getAreaRecepies = createAsyncThunk('recepies/area', async (name: string) => {
