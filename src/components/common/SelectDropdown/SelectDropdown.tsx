@@ -1,44 +1,39 @@
 import { FC } from "react"
 import useSelectDropdown from "../../../hooks/useSelectDropdown"
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md"
-import { AiOutlineClose } from "react-icons/ai"
 
 type SelectDropDownProps = {
     elements: string[],
-    dropDownTilte: string
+    dropDownTilte: string,
+    loading: boolean
 }
-const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte }) => {
+const SelectDropdown: FC<SelectDropDownProps> = ({ elements: e, dropDownTilte, loading }) => {
     const {
-        deSelectSelectedElement,
         handleInputChange,
         inputValue,
         selectElement,
         showElements,
         toggleShowElements,
-        notSelectedElements,
-        selectedElements } = useSelectDropdown(elements)
+        elements,
+    } = useSelectDropdown(e)
 
     return (
         <div className="select__dropdown">
             <div className="dropdown__main">
-                <div className="inputs">
-                    <input
-                        type="text"
-                        placeholder={dropDownTilte}
-                        onChange={handleInputChange}
-                        value={inputValue}
-                    />
-                    {
-                        <div ><div>{selectedElements}</div><button onClick={() => deSelectSelectedElement(selectedElements)}><AiOutlineClose /></button></div>
-                    }
-                </div>
+                <input
+                    type="text"
+                    placeholder={loading ? "Loading..." : dropDownTilte}
+                    onChange={handleInputChange}
+                    value={inputValue}
+                    disabled={loading}
+                />
                 <button onClick={toggleShowElements}>{showElements ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}</button>
             </div>
             {
-                showElements
+                (showElements && loading)
                 &&
                 <div className="not__selected__elements">
-                    {notSelectedElements.map(v => <div key={`${v}__notSlected`} onClick={() => selectElement(v)}>{v}</div>)}
+                    {elements.map(element => <div key={`${element}__notSlected`} onClick={() => selectElement(element)}>{element}</div>)}
                 </div >
 
             }

@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { sortArrayAlphabetically } from '../helper/sortArrayAlphabitically';
 import { element } from '../enums/showOrHideElement';
 
-const useSelectDropdown = (elements: string[]) => {
+const useSelectDropdown = (e: string[]) => {
     const [inputValue, setInputValue] = useState<string>('');
-    const [notSelectedElements, setNotSelectedElements] = useState<string[]>(elements);
-    const [selectedElements, setSelectedElements] = useState('');
+    const [elements, setElements] = useState<string[]>(e);
     const [showElements, setShowElements] = useState<element>(element.hide)
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
         setShowElements(element.show);
@@ -16,15 +15,11 @@ const useSelectDropdown = (elements: string[]) => {
     }
 
     const selectElement = (element: string) => {
-        setSelectedElements(element);
-        setNotSelectedElements(notSelectedElements.filter(v => v !== element));
-    }
-    const deSelectSelectedElement = (element: string) => {
-        setNotSelectedElements(sortArrayAlphabetically([...notSelectedElements, element]));
-        setSelectedElements('');
-
+        setInputValue(element);
+        setElements(elements.filter(v => v !== element));
     }
 
-    return { inputValue, showElements, toggleShowElements, deSelectSelectedElement, handleInputChange, selectElement, notSelectedElements, selectedElements }
+
+    return { inputValue, showElements, toggleShowElements, handleInputChange, selectElement, elements }
 }
 export default useSelectDropdown
