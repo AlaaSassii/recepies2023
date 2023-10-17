@@ -7,14 +7,12 @@ type initialStateType = {
     recepies: recepiesCuisineType | undefined,
     loading: boolean,
     error: string,
-    name: string,
 }
 
 const initialState: initialStateType = {
     recepies: undefined,
     loading: false,
     error: '',
-    name: '',
 }
 
 export const getIngredientRecepies = createAsyncThunk('recepies/ingredient', async (name: string) => {
