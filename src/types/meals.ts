@@ -1,4 +1,4 @@
-export type Meal = {
+export type recepie = {
     idMeal: string;
     strMeal: string;
     strDrinkAlternate: string | null;
@@ -50,4 +50,4 @@ export type Meal = {
     strMeasure20: string | null;
 };
 
-export type Meals = Meal[] | undefined
+export type recepies = recepie[] | undefined

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Meal } from '../types/meals';
+import { recepie } from '../types/meals';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 const useGetRandomRecepie = () => {
-    const [randomRecepie, setRandomRecepie] = useState<undefined | Meal>(undefined);
+    const [randomRecepie, setRandomRecepie] = useState<undefined | recepie>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const getRadomRecepie = () => {

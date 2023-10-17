@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Meals } from '../types/meals';
+import { recepies } from '../types/meals';
 import { useDebounce } from './useDebounce';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 
 const useSearchMealByName = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
-    const [searchResults, setSearchResults] = useState<Meals>([]);
+    const [searchResults, setSearchResults] = useState<recepies>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
