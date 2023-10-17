@@ -6,10 +6,12 @@ type SelectDropDownProps = {
     elements: string[],
     dropDownTilte: string,
     loading: boolean,
-    getRecepie: (elememt: string) => void
+    getRecepie: (elememt: string) => void,
+    selectDropDownValue?: string,
+    handleChangeSlectDropDown?: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
-const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading, getRecepie }) => {
-    const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, } = useSelectDropdown()
+const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading, getRecepie, selectDropDownValue, handleChangeSlectDropDown }) => {
+    const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, } = useSelectDropdown(handleChangeSlectDropDown)
     const handleSlect = (element: string) => {
         selectElement(element);
         getRecepie(element)
@@ -21,8 +23,9 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
                     type="text"
                     placeholder={loading ? "Loading..." : dropDownTilte}
                     onChange={handleInputChange}
-                    value={inputValue}
+                    value={selectDropDownValue ? selectDropDownValue : inputValue}
                     disabled={loading}
+
                 />
                 <button onClick={toggleShowElements}>{showElements ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}</button>
             </div>

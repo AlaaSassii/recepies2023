@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { element } from '../enums/showOrHideElement';
 
-const useSelectDropdown = () => {
+type selectDropDownValueType = (e: React.ChangeEvent<HTMLInputElement>) => void
+const useSelectDropdown = (selectDropDownValue: undefined | selectDropDownValueType) => {
     const [inputValue, setInputValue] = useState<string>('');
     const [showElements, setShowElements] = useState<element>(element.hide)
 
@@ -12,8 +13,14 @@ const useSelectDropdown = () => {
         setShowElements(element.hide)
     }
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value);
-        showElementsFunction()
+        if (!selectDropDownValue) {
+            setInputValue(e.target.value);
+            showElementsFunction()
+        } else {
+            selectDropDownValue(e)
+            showElementsFunction()
+
+        }
     }
 
     const toggleShowElements = () => {
@@ -27,7 +34,6 @@ const useSelectDropdown = () => {
         setInputValue(element);
         hideElementsFunction()
     }
-
 
     return { inputValue, showElements, toggleShowElements, handleInputChange, selectElement }
 }
