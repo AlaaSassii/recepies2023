@@ -3,5 +3,5 @@ export type category = {
 }
 
 export type categoriesType = {
-    meals: categoriesType[]
+    meals: category[]
 }

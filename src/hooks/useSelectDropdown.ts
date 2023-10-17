@@ -10,8 +10,14 @@ const useSelectDropdown = (e: string[]) => {
         setInputValue(e.target.value);
         setShowElements(element.show);
     }
+    const showElementsFunction = () => { setShowElements(element.show) }
+    const hideElementsFunction = () => { setShowElements(element.hide) }
     const toggleShowElements = () => {
-        setShowElements(showElements ? element.hide : element.hide);
+        if (showElements) {
+            hideElementsFunction()
+        } else {
+            showElementsFunction()
+        }
     }
 
     const selectElement = (element: string) => {
