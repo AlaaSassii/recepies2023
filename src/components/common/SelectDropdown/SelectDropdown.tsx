@@ -1,7 +1,7 @@
 import { FC } from "react"
 import useSelectDropdown from "../../../hooks/useSelectDropdown"
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md"
-
+import './SelectDropdown.scss'
 type SelectDropDownProps = {
     elements: string[],
     dropDownTilte: string,

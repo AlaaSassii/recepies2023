@@ -1,3 +1,25 @@
 .cuisine__links{
-    background-color: red;
+    display: flex;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    gap: 20px;
+    margin-bottom:20px;
+    a{
+        text-decoration: none;
+        color: white;
+        background-color: rgb(244, 1, 1);
+        box-shadow: rgba(213, 1, 1, 0.2) 0px 7px 29px 0px;
+        padding: 7px 10px;
+        min-width: 100px;
+        transition: .3s;
+        border-radius: 10px;
+        &:hover{
+            background-color: rgb(195, 4, 4);
+
+        }
+        &.active{
+            background-color: rgb(195, 4, 4);
+        }
+    }
 }
