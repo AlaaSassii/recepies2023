@@ -6,20 +6,22 @@ type recepieeCardType = {
     image: string,
     recepieName: string,
     recepieId: string,
-    description?: string
+    category?: string,
+    region?: string
 }
-const RecepieCard: FC<recepieeCardType> = ({ image, recepieId, recepieName, description }) => {
+const RecepieCard: FC<recepieeCardType> = ({ image, recepieId, recepieName, category, region }) => {
     const navigate = useNavigate()
     return (
         <div className='recepie__card'>
             <div className='recepie__card__image'>
                 <img src={image} />
             </div>
-            <h1>{recepieName}</h1>
-            {
-                description && <p className='recepie__card__paragraph'>{description}</p>
-            }
-            <button className='recepie__card__button' onClick={() => { navigate(`/recepie-info/${recepieId}`) }}><div>Learn More</div><BsArrowRight /></button>
+            <div className="info">
+                <p><b>Recepie Name:</b>{recepieName}</p>
+                {category && <p><b>Recepie Category:</b>{category}</p>}
+                {region && <p><b>Recepie Category:</b>{region}</p>}
+                <button className='recepie__card__button' onClick={() => { navigate(`/recepie-info/${recepieId}`) }}><div>Learn More</div><BsArrowRight /></button>
+            </div>
         </div>
     )
 }
