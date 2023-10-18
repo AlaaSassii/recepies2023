@@ -29,12 +29,15 @@ export const getRecepiesByCategory = createAsyncThunk('recepies/categories', asy
     }
 })
 
-const recepiesSlice = createSlice({
+const recepiesByCategoriesSlice = createSlice({
     name: 'recepiesCategory',
     initialState,
     reducers: {
         changeSearchValue(state, action: PayloadAction<React.ChangeEvent<HTMLInputElement>>) {
             state.valueSearch = action.payload.target.value
+        },
+        getSearchValue(state, action: PayloadAction<string>) {
+            state.valueSearch = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -55,5 +58,5 @@ const recepiesSlice = createSlice({
     }
 })
 
-export default recepiesSlice.reducer
-export const { changeSearchValue } = recepiesSlice.actions
+export default recepiesByCategoriesSlice.reducer
+export const { changeSearchValue, getSearchValue } = recepiesByCategoriesSlice.actions

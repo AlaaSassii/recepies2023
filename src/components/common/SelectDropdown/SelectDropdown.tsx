@@ -16,6 +16,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
         selectElement(element);
         getRecepie(element)
     }
+
     return (
         <div className="select__dropdown">
             <div className="dropdown__main">
@@ -34,7 +35,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
                     ?
                     <div className="not__selected__elements">
                         {elements
-                            .filter(element => element.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase()))
+                            .filter(element => element.toLocaleLowerCase().includes(selectDropDownValue ? selectDropDownValue.toLocaleLowerCase() : inputValue.toLocaleLowerCase()))
                             .map(element => <h1 key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</h1>)}
                     </div >
                     :

@@ -13,7 +13,7 @@ const useSelectDropdown = (selectDropDownValue: undefined | selectDropDownValueT
         setShowElements(element.hide)
     }
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (!selectDropDownValue) {
+        if (selectDropDownValue === undefined) {
             setInputValue(e.target.value);
             showElementsFunction()
         } else {
