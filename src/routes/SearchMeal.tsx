@@ -2,7 +2,6 @@ import InputSearch from '../components/common/InputSearch'
 import Loading from '../components/common/Loading';
 import PageContainer from '../components/common/PageContainer'
 import RecepieCard from '../components/common/RecepieCard';
-import MealCard from '../components/specify/MealCard';
 import useSearchRecepieByName from '../hooks/useSearchRecepieByName';
 
 const SearchMeal = () => {
@@ -25,16 +24,8 @@ const SearchMeal = () => {
                                         recepieId={v.idMeal}
                                         image={v.strMealThumb}
                                         recepieName={v.strMeal}
+                                        key={`${index}__meals__search`}
                                     />
-                                    //  <MealCard
-                                    //     idMeal={v.idMeal}
-                                    //     strMeal={v.strMeal}
-                                    //     strMealThumb={v.strMealThumb}
-                                    //     strArea={v.strArea}
-                                    //     strCategory={v.strCategory}
-                                    //     key={`meal___${index}`}
-
-                                    // />
                                 )
                             }
                         </div>
