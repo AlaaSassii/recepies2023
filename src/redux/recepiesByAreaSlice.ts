@@ -19,7 +19,7 @@ const initialState: initialStateType = {
 
 export const getAreaRecepies = createAsyncThunk('recepies/area', async (name: string) => {
     try {
-        const apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${name}`;
+        const apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${name}`;
         const response: AxiosResponse = await axios.get(apiUrl);
         return response.data
     }

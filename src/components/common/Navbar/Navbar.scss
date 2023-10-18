@@ -14,16 +14,40 @@ nav{
         .nav__left{
             @include flexWithGap(5px);
             font-size: 30px;
+            @media(max-width:798px){
+                font-size: 15px;
+            }
         }
         .nav__right{
             @include flexWithGap(10px);
             >ul{
+
                 @include flexWithGap(10px);
                 list-style: none;
                 >li>a{
                     text-decoration: none;
-                    color: var(--text-color);   
+                    color: var(--text-color); 
+                    display: flex;
+                    align-items: center;
+                    gap:5px;
+                    >div{
+                        @media(max-width:798px){
+                            display: none !important;
+                        }
+                    }
+                    
                 }
+
+                svg{
+                    font-size: 20px;
+                    @media(max-width:798px){
+                    font-size: 15px;
+
+                    }
+                }
+                @media(max-width:798px){
+                    margin-right: 20px;
+                    }
             }
             button{
                 @include button;

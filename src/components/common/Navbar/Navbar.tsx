@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { MdFastfood } from 'react-icons/md';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs'
+import { GiMeal, GiPerspectiveDiceSixFacesRandom, } from 'react-icons/gi'
 import './Navbar.scss'
 import useTheme from '../../../hooks/useTheme';
+import { AiFillHome, AiOutlineMail } from 'react-icons/ai';
+import { BiSearch } from 'react-icons/bi';
 const Navbar = () => {
     const { theme, toggleTheme } = useTheme()
     return (
@@ -14,11 +17,11 @@ const Navbar = () => {
                 </div>
                 <div className="nav__right">
                     <ul>
-                        <li><NavLink to='/'>Home</NavLink></li>
-                        <li><NavLink to='/search-recepies'  >Recipes Search</NavLink></li>
-                        <li><NavLink to='/random-recepie'  >Random Recipe</NavLink></li>
-                        <li><NavLink to='/search-recepies-by'>Cuisine Recepie</NavLink></li>
-                        <li><NavLink to='/contact-us'  >Contact Us</NavLink></li>
+                        <li><NavLink to='/'><AiFillHome /><div>Home</div></NavLink></li>
+                        <li><NavLink to='/search-recepies'  > <BiSearch /><div>Recipes Search</div></NavLink></li>
+                        <li><NavLink to='/random-recepie'  ><GiPerspectiveDiceSixFacesRandom /><div>Random Recipe</div></NavLink></li>
+                        <li><NavLink to='/search-recepies-by'><GiMeal /><div>Cuisine Recepie</div></NavLink></li>
+                        <li><NavLink to='/contact-us'  ><AiOutlineMail /><div>Contact Us</div></NavLink></li>
 
                     </ul>
                     <button onClick={toggleTheme}>{theme === 'theme-light' ? <BsSunFill /> : <BsFillMoonStarsFill />}</button>
