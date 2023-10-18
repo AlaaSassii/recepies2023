@@ -15,7 +15,7 @@ const RandomRecepie = () => {
 
     console.log({ strMealThumb: randomRecepie?.strMealThumb, ingredients, ingredientsAmount, randomRecepie })
     return (
-        <div>
+        <div className='container'>
             {
                 error
                     ?
