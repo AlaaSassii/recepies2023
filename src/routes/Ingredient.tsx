@@ -19,7 +19,7 @@ const Ingredient = () => {
                         <p>loading..</p>
                         :
                         <SelectDropdown
-                            dropDownTilte='ingredient..'
+                            dropDownTilte='Search Ingredient'
                             elements={value?.map(v => v.strIngredient) || []}
                             loading={loading}
                             getRecepie={getRecepie}

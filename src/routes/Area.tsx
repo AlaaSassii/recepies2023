@@ -20,7 +20,7 @@ const Area = () => {
                         <p>loading..</p>
                         :
                         <SelectDropdown
-                            dropDownTilte='ingredient..'
+                            dropDownTilte='Search Area'
                             elements={value?.map(v => v.strArea) || []}
                             loading={loading}
                             getRecepie={getRecepie}
