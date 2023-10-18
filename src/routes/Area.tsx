@@ -15,19 +15,15 @@ const Area = () => {
                     ?
                     <h1>{error}</h1>
                     :
-                    loading
-                        ?
-                        <p>loading..</p>
-                        :
-                        <SelectDropdown
-                            dropDownTilte='Search Area'
-                            elements={value?.map(v => v.strArea) || []}
-                            loading={loading}
-                            getRecepie={getRecepie}
-                            selectDropDownValue={valueSearch}
-                            handleChangeSlectDropDown={handleSearchValueChange}
-                            getSearchValueFunction={getSearchValueFunction}
-                        />
+                    <SelectDropdown
+                        dropDownTilte='Search Area'
+                        elements={value?.map(v => v.strArea) || []}
+                        loading={loading}
+                        getRecepie={getRecepie}
+                        selectDropDownValue={valueSearch}
+                        handleChangeSlectDropDown={handleSearchValueChange}
+                        getSearchValueFunction={getSearchValueFunction}
+                    />
             }
             {
                 recepiesError

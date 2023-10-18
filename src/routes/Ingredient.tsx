@@ -14,19 +14,15 @@ const Ingredient = () => {
                     ?
                     <h1>{error}</h1>
                     :
-                    loading
-                        ?
-                        <p>loading..</p>
-                        :
-                        <SelectDropdown
-                            dropDownTilte='Search Ingredient'
-                            elements={value?.map(v => v.strIngredient) || []}
-                            loading={loading}
-                            getRecepie={getRecepie}
-                            selectDropDownValue={valueSearch}
-                            handleChangeSlectDropDown={handleSearchValueChange}
-                            getSearchValueFunction={getSearchValueFunction}
-                        />
+                    <SelectDropdown
+                        dropDownTilte='Search Ingredient'
+                        elements={value?.map(v => v.strIngredient) || []}
+                        loading={loading}
+                        getRecepie={getRecepie}
+                        selectDropDownValue={valueSearch}
+                        handleChangeSlectDropDown={handleSearchValueChange}
+                        getSearchValueFunction={getSearchValueFunction}
+                    />
             }
             {
                 recepiesError

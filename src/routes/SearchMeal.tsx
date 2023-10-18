@@ -7,16 +7,17 @@ import '../scss/main.scss'
 
 const SearchMeal = () => {
     const { recepies, error, loading, name, handleChangeMealValue } = useSearchRecepieByName();
+    console.log({ recepies, error, loading, name, handleChangeMealValue })
     return (
         <PageContainer>
             <InputSearch handleChange={handleChangeMealValue} value={name} />
             {
                 error ?
-                    <p>error</p>
+                    <p>{error}</p>
                     :
                     loading
                         ?
-                        <Loading />
+                        <h1>Loading..</h1>
                         :
                         <div className='recepies'>
                             {

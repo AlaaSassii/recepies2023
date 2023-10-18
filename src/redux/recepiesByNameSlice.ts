@@ -34,7 +34,7 @@ const recepiesSlice = createSlice({
     initialState,
     reducers: {
         changeName(state, action: PayloadAction<React.ChangeEvent<HTMLInputElement>>) {
-            state.name = action.payload.target.value
+            state.name = action.payload.target.value;
         }
     },
     extraReducers: (builder) => {

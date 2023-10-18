@@ -14,19 +14,16 @@ const Categories = () => {
                     ?
                     <h1>{error}</h1>
                     :
-                    loading
-                        ?
-                        <p>loading..</p>
-                        :
-                        <SelectDropdown
-                            dropDownTilte='Search Category'
-                            elements={value?.map(v => v.strCategory) || []}
-                            loading={loading}
-                            getRecepie={getRecepie}
-                            selectDropDownValue={valueSearch}
-                            handleChangeSlectDropDown={handleSearchValueChange}
-                            getSearchValueFunction={getSearchValueFunction}
-                        />
+
+                    <SelectDropdown
+                        dropDownTilte='Search Category'
+                        elements={value?.map(v => v.strCategory) || []}
+                        loading={loading}
+                        getRecepie={getRecepie}
+                        selectDropDownValue={valueSearch}
+                        handleChangeSlectDropDown={handleSearchValueChange}
+                        getSearchValueFunction={getSearchValueFunction}
+                    />
             }
             {
                 recepiesError
