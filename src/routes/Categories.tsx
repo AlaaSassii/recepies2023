@@ -1,8 +1,10 @@
 import useGetCategories from '../hooks/useGetCategories'
 import SelectDropdown from '../components/common/SelectDropdown';
+import { useGetRecepieByCategory } from '../hooks/useGetRecepiesByCategory';
 
 const Categories = () => {
     const { value, loading, error } = useGetCategories();
+    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies } = useGetRecepieByCategory();
 
     return (
         <div>
@@ -19,8 +21,21 @@ const Categories = () => {
                             dropDownTilte='categories..'
                             elements={value?.map(v => v.strCategory) || []}
                             loading={loading}
+                            getRecepie={getRecepie}
                             key='categorie'
                         />
+            }
+            {
+                recepiesError
+                    ?
+                    <h1>{recepiesError}</h1>
+                    :
+                    recepiesPending
+                        ?
+                        <p>loading..</p>
+                        :
+                        recepies?.map(recepie => recepie.strMeal)
+                // recepies?.map(recepie => recepie.strMeal)
             }
         </div>
     )

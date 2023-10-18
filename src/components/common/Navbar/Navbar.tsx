@@ -14,7 +14,7 @@ const Navbar = () => {
                 </div>
                 <div className="nav__right">
                     <ul>
-                        <li><NavLink to='/search-meals'  >Recipes Search</NavLink></li>
+                        <li><NavLink to='/search-recepies'  >Recipes Search</NavLink></li>
                         <li><NavLink to='/'  >Random Recipe</NavLink></li>
                         <li><NavLink to='/'  >Category-based Recipe</NavLink></li>
                         <li><NavLink to='/'  >Advanced Recipe Search</NavLink></li>

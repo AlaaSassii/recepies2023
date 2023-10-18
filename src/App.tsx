@@ -28,8 +28,9 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/search-meals' element={<SearchMeal />} />
-        <Route path='/meal/:id' element={<MealInfo />} />
+        <Route path='/search-recepies' element={<SearchMeal />} />
+        <Route path='/recepie-info/:id' element={<MealInfo />} />
+        <Route path='/random-recepie' element={<MealInfo />} />
 
         <Route path="search-recepies-by" element={<CuisineLinks />}>
           <Route path='categories' element={<Categories />} />

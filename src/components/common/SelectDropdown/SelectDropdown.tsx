@@ -12,7 +12,7 @@ type SelectDropDownProps = {
 }
 const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading, getRecepie, selectDropDownValue, handleChangeSlectDropDown }) => {
     const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, } = useSelectDropdown(handleChangeSlectDropDown)
-    const handleSlect = (element: string) => {
+    const handleSelect = (element: string) => {
         selectElement(element);
         getRecepie(element)
     }
@@ -35,7 +35,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
                     <div className="not__selected__elements">
                         {elements
                             .filter(element => element.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase()))
-                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => handleSlect(element)}>{element}</h1>)}
+                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</h1>)}
                     </div >
                     :
                     null

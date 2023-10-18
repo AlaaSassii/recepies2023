@@ -26,7 +26,7 @@ const MealCard: FC<MealCardProps> = (
                 <p><b>From:</b>{strArea}</p>
                 <p>{strCategory}</p>
             </div>
-            <button onClick={() => navigate(`/meal/${idMeal}`)}>Look More</button>
+            <button onClick={() => navigate(`/recepie/${idMeal}`)}>Look More</button>
         </div>
     )
 }
