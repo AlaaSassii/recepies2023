@@ -22,8 +22,14 @@ const useGetMealInfo = (id: string | undefined) => {
                 setLoading(false)
             })
     }, [])
+    const ingredients = Object.values(Meal || {})
+        .filter((v, i) => Object.keys(Meal || {})[i].includes('strIngredient'))
+        .filter(v => v !== '')
 
-    return { Meal, loading, error }
+    const ingredientsAmount = Object.values(Meal || {})
+        .filter((v, i) => Object.keys(Meal || {})[i].includes('strMeasure'))
+        .slice(0, ingredients.length)
+    return { Meal, loading, error, ingredients, ingredientsAmount }
 }
 
 

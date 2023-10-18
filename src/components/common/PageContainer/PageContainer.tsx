@@ -6,7 +6,7 @@ type PageContainerProps = {
 }
 const PageContainer: FC<PageContainerProps> = ({ children }) => {
     return (
-        <div className='page__container container'>{children}</div>
+        <div className=' container page__container'>{children}</div>
     )
 }
 

@@ -5,7 +5,9 @@ import Loading from '../components/common/Loading';
 const MealInfo = () => {
 
     const { id } = useParams();
-    const { Meal, loading, error } = useGetMealInfo(id)
+    const { Meal, loading, error, ingredients, ingredientsAmount } = useGetMealInfo(id)
+
+    console.log({ ingredients, ingredientsAmount })
     return (
         <PageContainer>
             {
