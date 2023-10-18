@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
-import { recepie } from '../types/meals';
+import { recipe } from '../types/meals';
 import { AxiosResponse } from 'axios';
 
 const useGetMealInfo = (id: string | undefined) => {
     if (!id) return { Meal: undefined, loading: false, error: 'something went wrong!' }
-    const [Meal, setMeal] = useState<recepie | undefined>(undefined);
+    const [Meal, setMeal] = useState<recipe | undefined>(undefined);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 

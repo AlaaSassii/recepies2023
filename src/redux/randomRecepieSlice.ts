@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
-import { recepie } from "../types/meals";
+import { recipe } from "../types/meals";
 
 type initialStateType = {
-    randomRecepie: recepie | undefined,
+    randomRecepie: recipe | undefined,
     loading: boolean,
     error: string,
 }
