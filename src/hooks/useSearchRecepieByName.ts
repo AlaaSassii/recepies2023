@@ -9,12 +9,11 @@ const useSearchRecepieByName = () => {
     const { recepies, error, loading, name } = useAppSelector(state => state.recepiesName);
     const debouncedSearchTerm = useDebounce(name, 500);
     const handleChangeMealValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(changeName(e))
+        dispatch(changeName(e.target.value))
     }
     useEffect(() => {
-        // if (debouncedSearchTerm) {
+        console.log({ debouncedSearchTerm })
         dispatch(getRecepies(debouncedSearchTerm))
-        // }
     }, [debouncedSearchTerm])
     return { recepies, error, loading, name, handleChangeMealValue }
 
