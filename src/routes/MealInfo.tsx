@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom'
 import PageContainer from '../components/common/PageContainer';
 import Loading from '../components/common/Loading';
 import RecepieInfoHeader from '../components/specify/RecepieInfoHeader';
+import RecepieInfoDescription from '../components/specify/RecepieInfoDescription';
 const MealInfo = () => {
 
     const { id } = useParams();
     const { Meal, loading, error, ingredients, ingredientsAmount } = useGetMealInfo(id)
-
+    console.log({ strYoutube: Meal?.strYoutube })
     return (
         <PageContainer>
             {
@@ -26,6 +27,10 @@ const MealInfo = () => {
                                 ingredients={ingredients as string[]}
                                 ingredientsAmount={ingredientsAmount as string[]}
 
+                            />
+                            <RecepieInfoDescription
+                                recepie={Meal?.strInstructions as string}
+                                videoLink={Meal?.strYoutube as string}
                             />
 
                         </div>

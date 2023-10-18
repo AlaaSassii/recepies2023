@@ -10,7 +10,7 @@ const RecepieInfoDescription: FC<RecepieInfoDescriptionType> = ({ recepie, video
         <div className='recepie__info__description'>
             <h1>How to Cook this? 😋</h1>
             <p className='recepie'>{recepie}</p>
-            <iframe src={videoLink} width="420" height="345"></iframe>
+            <iframe width="560" height="315" src={videoLink} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
         </div>
     )
 }
