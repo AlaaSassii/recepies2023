@@ -2,7 +2,7 @@ import React from 'react'
 import { useAppDispatch } from "./useAppDispatch";
 import { useAppSelector } from "./useAppSelector";
 import { getIngredientRecepies } from "../redux/recepiesByIngredientsSlice";
-import { changeSearchValue } from "../redux/recepiesByIngredientsSlice";
+import { changeSearchValue, getSearchValue } from "../redux/recepiesByIngredientsSlice";
 
 export const useGetRecepieByIngredient = () => {
     const dispatch = useAppDispatch();
@@ -11,5 +11,7 @@ export const useGetRecepieByIngredient = () => {
     const handleSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeSearchValue(e))
     }
-    return { recepies, loading, error, getRecepie, valueSearch, handleSearchValueChange }
+
+    const getSearchValueFunction = (value: string) => { dispatch(getSearchValue(value)) }
+    return { recepies, loading, error, getRecepie, valueSearch, handleSearchValueChange, getSearchValueFunction }
 }

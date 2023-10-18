@@ -1,7 +1,7 @@
 import { useAppDispatch } from "./useAppDispatch";
 import { useAppSelector } from "./useAppSelector";
 import { getAreaRecepies } from "../redux/recepiesByAreaSlice";
-import { changeSearchValue } from "../redux/recepiesByAreaSlice";
+import { changeSearchValue, getSearchValue } from "../redux/recepiesByAreaSlice";
 
 export const useGetRecepiesByArea = () => {
     const dispatch = useAppDispatch();
@@ -10,5 +10,6 @@ export const useGetRecepiesByArea = () => {
     const handleSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeSearchValue(e))
     }
-    return { recepies, loading, error, getRecepie, valueSearch, handleSearchValueChange }
+    const getSearchValueFunction = (value: string) => { dispatch(getSearchValue(value)) }
+    return { recepies, loading, error, getRecepie, valueSearch, handleSearchValueChange, getSearchValueFunction }
 }
