@@ -9,7 +9,7 @@ const Area = () => {
     console.log(recepies);
 
     return (
-        <div>
+        <div className='container'>
             {
                 error
                     ?

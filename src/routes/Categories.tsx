@@ -8,7 +8,7 @@ const Categories = () => {
     const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepieByCategory();
 
     return (
-        <div>
+        <div className='container'>
             {
                 error
                     ?

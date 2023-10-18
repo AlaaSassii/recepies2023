@@ -8,7 +8,7 @@ const Ingredient = () => {
     const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepieByIngredient();
 
     return (
-        <div>
+        <div className='container'>
             {
                 error
                     ?
