@@ -27,7 +27,12 @@
     h1{
         font-size: 18px;
     }
+    p{
+        margin-top: 5px;
+        font-size: small;
+    }
     button{
+        margin-top: 5px;
         display: flex;
         align-items: center;
         gap:5px;
@@ -37,5 +42,6 @@
         border-radius: 4px;
         background-color: rgb(61, 61, 238);
         color: white;
+        font-size: small;
     }
 }

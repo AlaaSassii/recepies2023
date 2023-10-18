@@ -24,6 +24,8 @@ const SearchMeal = () => {
                                         recepieId={v.idMeal}
                                         image={v.strMealThumb}
                                         recepieName={v.strMeal}
+                                        category={v.strCategory}
+                                        region={v.strArea}
                                         key={`${index}__meals__search`}
                                     />
                                 )
