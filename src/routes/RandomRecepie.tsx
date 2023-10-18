@@ -26,9 +26,9 @@ const RandomRecepie = () => {
                         <div>loading..</div>
                         :
                         <div className="meal__info">
-                            <div>
+                            <div className='recepie__info'>
                                 <h1>{randomRecepie?.strMeal}</h1>
-                                <button onClick={() => { getRandomRecpieFunction() }}>Reload <IoReloadOutline /></button>
+                                <button onClick={() => { getRandomRecpieFunction() }}><div>Reload</div> <IoReloadOutline /></button>
                             </div>
                             <RecepieInfoHeader
                                 image={randomRecepie?.strMealThumb as string}

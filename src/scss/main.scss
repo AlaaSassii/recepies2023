@@ -50,4 +50,21 @@ body{
 
 
   
- 
+ .recepie__info{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  button{
+    background-color: rgb(61, 61, 238);
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    outline: transparent;
+    border-radius: 4px;
+    display: flex;
+    width: fit-content;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+  }
+ }
