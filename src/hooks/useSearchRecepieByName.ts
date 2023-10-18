@@ -6,16 +6,15 @@ import { changeName, getRecepies } from '../redux/recepiesByNameSlice';
 
 const useSearchRecepieByName = () => {
     const dispatch = useAppDispatch();
-    const { recepies, error, loading, name } = useAppSelector(state => state.recepiesName);
+    const { recipes, error, loading, name } = useAppSelector(state => state.recepiesName);
     const debouncedSearchTerm = useDebounce(name, 500);
     const handleChangeMealValue = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeName(e.target.value))
     }
     useEffect(() => {
-        console.log({ debouncedSearchTerm })
         dispatch(getRecepies(debouncedSearchTerm))
     }, [debouncedSearchTerm])
-    return { recepies, error, loading, name, handleChangeMealValue }
+    return { recipes, error, loading, name, handleChangeMealValue }
 
 }
 

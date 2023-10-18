@@ -12,9 +12,6 @@ import Ingredient from './routes/Ingredient';
 import Contact from './routes/Contact';
 import RandomRecepie from './routes/RandomRecepie'
 const App = () => {
-  const { error, handleChangeMealValue, loading, name, recepies } = useSearchRecepieByName()
-  console.log({ error, handleChangeMealValue, loading, name, recepies });
-
   return (
     <>
       <Navbar />

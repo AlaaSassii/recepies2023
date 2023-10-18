@@ -1,18 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { recepies } from "../types/meals";
+import { recipes } from "../types/meals";
 import axios, { AxiosResponse } from "axios";
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 type initialStateType = {
-    recepies: recepies | undefined,
+    recipes: recipes | undefined | null,
     loading: boolean,
     error: string,
     name: string,
 }
 
 const initialState: initialStateType = {
-    recepies: undefined,
+    recipes: undefined,
     loading: false,
     error: '',
     name: '',
@@ -45,7 +45,7 @@ const recepiesSlice = createSlice({
             })
             .addCase(getRecepies.fulfilled, (state, action) => {
                 state.loading = false;
-                state.recepies = action.payload.meals;
+                state.recipes = action.payload.meals;
                 state.error = '';
             })
             .addCase(getRecepies.rejected, (state, action) => {

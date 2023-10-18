@@ -51,4 +51,4 @@ export type recepie = {
 };
 
 
-export type recepies = recepie[] | undefined
+export type recipes = recepie[] | undefined

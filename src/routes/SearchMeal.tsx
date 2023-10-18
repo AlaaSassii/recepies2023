@@ -6,8 +6,8 @@ import useSearchRecepieByName from '../hooks/useSearchRecepieByName';
 import '../scss/main.scss'
 
 const SearchMeal = () => {
-    const { recepies, error, loading, name, handleChangeMealValue } = useSearchRecepieByName();
-    console.log({ recepies, error, loading, name, handleChangeMealValue })
+    const { recipes, error, loading, name, handleChangeMealValue } = useSearchRecepieByName();
+    console.log({ recipes, error, loading, name, handleChangeMealValue })
     return (
         <PageContainer>
             <InputSearch handleChange={handleChangeMealValue} value={name} />
@@ -21,7 +21,7 @@ const SearchMeal = () => {
                         :
                         <div className='recepies'>
                             {
-                                recepies?.map((v, index) =>
+                                recipes?.map((v, index) =>
                                     <RecepieCard
                                         recepieId={v.idMeal}
                                         image={v.strMealThumb}
