@@ -39,7 +39,7 @@ const randomRecpieSlice = createSlice({
             })
             .addCase(getRadnomRecepie.fulfilled, (state, action) => {
                 state.loading = false;
-                state.randomRecepie = action.payload.meals;
+                state.randomRecepie = action.payload.meals[0];
                 state.error = '';
             })
             .addCase(getRadnomRecepie.rejected, (state, action) => {
