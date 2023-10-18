@@ -4,7 +4,7 @@ import { useGetRecepiesByArea } from '../hooks/useGetRecepiesByArea';
 
 const Area = () => {
     const { value, loading, error } = useGetAreas();
-    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies } = useGetRecepiesByArea();
+    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepiesByArea();
     console.log(recepies);
 
     return (
@@ -19,11 +19,13 @@ const Area = () => {
                         <p>loading..</p>
                         :
                         <SelectDropdown
-                            dropDownTilte='areas..'
+                            dropDownTilte='ingredient..'
                             elements={value?.map(v => v.strArea) || []}
                             loading={loading}
                             getRecepie={getRecepie}
-                            key='categorie'
+                            selectDropDownValue={valueSearch}
+                            handleChangeSlectDropDown={handleSearchValueChange}
+                            getSearchValueFunction={getSearchValueFunction}
                         />
             }
             {
@@ -35,8 +37,7 @@ const Area = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map(recepie => recepie.strMeal)
-                // recepies?.map(recepie => recepie.strMeal)
+                        recepies?.map(recepie => <h1>{recepie.strMeal}</h1>)
             }
         </div>
     )

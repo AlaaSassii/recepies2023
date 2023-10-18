@@ -4,7 +4,7 @@ import { useGetRecepieByIngredient } from '../hooks/useGetRecepiesByIngredient';
 
 const Ingredient = () => {
     const { value, loading, error } = useGetIngredients();
-    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange } = useGetRecepieByIngredient();
+    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepieByIngredient();
 
     return (
         <div>
@@ -24,7 +24,7 @@ const Ingredient = () => {
                             getRecepie={getRecepie}
                             selectDropDownValue={valueSearch}
                             handleChangeSlectDropDown={handleSearchValueChange}
-                            key='categorie'
+                            getSearchValueFunction={getSearchValueFunction}
                         />
             }
             {
@@ -36,7 +36,7 @@ const Ingredient = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map(recepie => recepie.strMeal)
+                        recepies?.map(recepie => <h1>{recepie.strMeal}</h1>)
             }
         </div>
     )

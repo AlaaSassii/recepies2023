@@ -4,7 +4,7 @@ import { useGetRecepieByCategory } from '../hooks/useGetRecepiesByCategory';
 
 const Categories = () => {
     const { value, loading, error } = useGetCategories();
-    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies } = useGetRecepieByCategory();
+    const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepieByCategory();
 
     return (
         <div>
@@ -18,11 +18,13 @@ const Categories = () => {
                         <p>loading..</p>
                         :
                         <SelectDropdown
-                            dropDownTilte='categories..'
+                            dropDownTilte='ingredient..'
                             elements={value?.map(v => v.strCategory) || []}
                             loading={loading}
                             getRecepie={getRecepie}
-                            key='categorie'
+                            selectDropDownValue={valueSearch}
+                            handleChangeSlectDropDown={handleSearchValueChange}
+                            getSearchValueFunction={getSearchValueFunction}
                         />
             }
             {
@@ -34,11 +36,11 @@ const Categories = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map(recepie => recepie.strMeal)
-                // recepies?.map(recepie => recepie.strMeal)
+                        recepies?.map(recepie => <h1 >{recepie.strMeal}</h1>)
             }
         </div>
     )
 }
 
 export default Categories
+// strCategory

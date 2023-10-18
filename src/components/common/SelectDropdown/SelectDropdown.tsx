@@ -9,12 +9,29 @@ type SelectDropDownProps = {
     getRecepie: (elememt: string) => void,
     selectDropDownValue?: string,
     handleChangeSlectDropDown?: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    getSearchValueFunction?: (name: string) => void
 }
-const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, loading, getRecepie, selectDropDownValue, handleChangeSlectDropDown }) => {
-    const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, } = useSelectDropdown(handleChangeSlectDropDown)
+const SelectDropdown: FC<SelectDropDownProps> = ({
+    elements,
+    dropDownTilte,
+    loading,
+    getRecepie,
+    selectDropDownValue,
+    handleChangeSlectDropDown,
+    getSearchValueFunction
+}) => {
+    const { handleInputChange, inputValue, selectElement, showElements, toggleShowElements, hideElementsFunction } = useSelectDropdown(handleChangeSlectDropDown)
+
     const handleSelect = (element: string) => {
-        selectElement(element);
-        getRecepie(element)
+        if (getSearchValueFunction === undefined) {
+            selectElement(element);
+            getRecepie(element);
+        } else {
+            getSearchValueFunction(element);
+            getRecepie(element);
+            hideElementsFunction()
+        }
+
     }
 
     return (
@@ -36,7 +53,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({ elements, dropDownTilte, load
                     <div className="not__selected__elements">
                         {elements
                             .filter(element => element.toLocaleLowerCase().includes(selectDropDownValue ? selectDropDownValue.toLocaleLowerCase() : inputValue.toLocaleLowerCase()))
-                            .map(element => <h1 key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</h1>)}
+                            .map(element => <p key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</p>)}
                     </div >
                     :
                     null

@@ -35,6 +35,6 @@ const useSelectDropdown = (selectDropDownValue: undefined | selectDropDownValueT
         hideElementsFunction()
     }
 
-    return { inputValue, showElements, toggleShowElements, handleInputChange, selectElement }
+    return { inputValue, showElements, toggleShowElements, handleInputChange, selectElement, hideElementsFunction, showElementsFunction }
 }
 export default useSelectDropdown
