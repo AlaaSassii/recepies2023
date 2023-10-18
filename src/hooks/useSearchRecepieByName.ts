@@ -15,7 +15,7 @@ const useSearchRecepieByName = () => {
         // if (debouncedSearchTerm) {
         dispatch(getRecepies(debouncedSearchTerm))
         // }
-    }, [debouncedSearchTerm, name])
+    }, [debouncedSearchTerm])
     return { recepies, error, loading, name, handleChangeMealValue }
 
 }
