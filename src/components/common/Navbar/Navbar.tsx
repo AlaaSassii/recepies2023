@@ -15,9 +15,10 @@ const Navbar = () => {
                 <div className="nav__right">
                     <ul>
                         <li><NavLink to='/search-recepies'  >Recipes Search</NavLink></li>
-                        <li><NavLink to='/'  >Random Recipe</NavLink></li>
-                        <li><NavLink to='/'  >Category-based Recipe</NavLink></li>
-                        <li><NavLink to='/'  >Advanced Recipe Search</NavLink></li>
+                        <li><NavLink to='/random-recepie'  >Random Recipe</NavLink></li>
+                        <li><NavLink to='/search-recepies-by'  >Cuisine Recepie</NavLink></li>
+                        <li><NavLink to='/search-recepies-by'  >Contact Us</NavLink></li>
+
                     </ul>
                     <button onClick={toggleTheme}>{theme === 'theme-light' ? <BsSunFill /> : <BsFillMoonStarsFill />}</button>
                 </div>

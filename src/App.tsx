@@ -8,7 +8,8 @@ import useSearchRecepieByName from './hooks/useSearchRecepieByName'
 import CuisineLinks from './components/specify/CuisineLinks/CuisineLinks'
 import Categories from './routes/Categories'
 import Area from './routes/Area'
-import Ingredient from './routes/Ingredient'
+import Ingredient from './routes/Ingredient';
+import Contact from './routes/Contact';
 const App = () => {
   const { error, handleChangeMealValue, loading, name, recepies } = useSearchRecepieByName()
   console.log({ error, handleChangeMealValue, loading, name, recepies });
@@ -31,7 +32,7 @@ const App = () => {
         <Route path='/search-recepies' element={<SearchMeal />} />
         <Route path='/recepie-info/:id' element={<MealInfo />} />
         <Route path='/random-recepie' element={<MealInfo />} />
-
+        <Route path="contact-us" element={<Contact />} />
         <Route path="search-recepies-by" element={<CuisineLinks />}>
           <Route path='categories' element={<Categories />} />
           <Route path='area' element={<Area />} />
