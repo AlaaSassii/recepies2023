@@ -18,7 +18,7 @@ const initialState: initialStateType = {
     name: '',
 }
 
-export const getRecepies = createAsyncThunk('recepies', async (name: string) => {
+export const getRecepies = createAsyncThunk('recipes', async (name: string) => {
     try {
         const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
         const response: AxiosResponse = await axios.get(apiUrl);
@@ -30,7 +30,7 @@ export const getRecepies = createAsyncThunk('recepies', async (name: string) => 
 })
 
 const recepiesSlice = createSlice({
-    name: 'recepies',
+    name: 'recipes',
     initialState,
     reducers: {
         changeName(state, action: PayloadAction<string>) {

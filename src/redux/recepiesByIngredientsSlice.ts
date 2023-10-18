@@ -5,14 +5,14 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 
 type initialStateType = {
-    recepies: recepiesCuisineType | undefined,
+    recipes: recepiesCuisineType | undefined,
     loading: boolean,
     error: string,
     valueSearch: string
 }
 
 const initialState: initialStateType = {
-    recepies: undefined,
+    recipes: undefined,
     loading: false,
     error: '',
     valueSearch: ''
@@ -49,7 +49,7 @@ const recepiesByIngredientsSlice = createSlice({
             })
             .addCase(getIngredientRecepies.fulfilled, (state, action) => {
                 state.loading = false;
-                state.recepies = action.payload.meals;
+                state.recipes = action.payload.meals;
                 state.error = '';
             })
             .addCase(getIngredientRecepies.rejected, (state, action) => {

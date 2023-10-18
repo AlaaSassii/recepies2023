@@ -6,7 +6,7 @@ import { changeSearchValue, getSearchValue } from "../redux/recepiesByIngredient
 
 export const useGetRecepieByIngredient = () => {
     const dispatch = useAppDispatch();
-    const { recepies, loading, error, valueSearch } = useAppSelector(state => state.recepiesByIngredient)
+    const { recipes: recepies, loading, error, valueSearch } = useAppSelector(state => state.recepiesByIngredient)
     const getRecepie = (ingredient: string) => { dispatch(getIngredientRecepies(ingredient)) }
     const handleSearchValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(changeSearchValue(e))

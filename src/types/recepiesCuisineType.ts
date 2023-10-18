@@ -1,6 +1,6 @@
-export type recipesCuisineType = {
+export type recipeCuisineType = {
     idMeal: string,
     strMeal: string,
     strMealThumb: string,
 }
-export type recepiesCuisineType = recipesCuisineType[]
+export type recepiesCuisineType = recipeCuisineType[]
