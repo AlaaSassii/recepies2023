@@ -2,7 +2,7 @@ import useGetCategories from '../hooks/useGetCategories'
 import SelectDropdown from '../components/common/SelectDropdown';
 import { useGetRecepieByCategory } from '../hooks/useGetRecepiesByCategory';
 import RecepieCard from '../components/common/RecepieCard';
-
+import '../scss/main.scss'
 const Categories = () => {
     const { value, loading, error } = useGetCategories();
     const { error: recepiesError, getRecepie, loading: recepiesPending, recepies, valueSearch, handleSearchValueChange, getSearchValueFunction } = useGetRecepieByCategory();
@@ -37,13 +37,15 @@ const Categories = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map((recepie, index) =>
-                            <RecepieCard
-                                image={recepie.strMealThumb}
-                                recepieId={recepie.idMeal}
-                                recepieName={recepie.strMeal}
-                                key={`${index}__categories`}
-                            />)
+                        <div className='recepies'>
+                            {recepies?.map((recepie, index) =>
+                                <RecepieCard
+                                    image={recepie.strMealThumb}
+                                    recepieId={recepie.idMeal}
+                                    recepieName={recepie.strMeal}
+                                    key={`${index}__categories`}
+                                />)}
+                        </div>
             }
         </div>
     )

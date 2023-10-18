@@ -3,6 +3,7 @@ import Loading from '../components/common/Loading';
 import PageContainer from '../components/common/PageContainer'
 import RecepieCard from '../components/common/RecepieCard';
 import useSearchRecepieByName from '../hooks/useSearchRecepieByName';
+import '../scss/main.scss'
 
 const SearchMeal = () => {
     const { recepies, error, loading, name, handleChangeMealValue } = useSearchRecepieByName();
@@ -17,7 +18,7 @@ const SearchMeal = () => {
                         ?
                         <Loading />
                         :
-                        <div className='meals__container'>
+                        <div className='recepies'>
                             {
                                 recepies?.map((v, index) =>
                                     <RecepieCard
