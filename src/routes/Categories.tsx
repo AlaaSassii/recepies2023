@@ -1,6 +1,7 @@
 import useGetCategories from '../hooks/useGetCategories'
 import SelectDropdown from '../components/common/SelectDropdown';
 import { useGetRecepieByCategory } from '../hooks/useGetRecepiesByCategory';
+import RecepieCard from '../components/common/RecepieCard';
 
 const Categories = () => {
     const { value, loading, error } = useGetCategories();
@@ -36,7 +37,13 @@ const Categories = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map(recepie => <h1 >{recepie.strMeal}</h1>)
+                        recepies?.map((recepie, index) =>
+                            <RecepieCard
+                                image={recepie.strMealThumb}
+                                recepieId={recepie.idMeal}
+                                recepieName={recepie.strMeal}
+                                key={`${index}__categories`}
+                            />)
             }
         </div>
     )

@@ -1,6 +1,7 @@
 import useGetAreas from '../hooks/useGetAreas';
 import SelectDropdown from '../components/common/SelectDropdown';
 import { useGetRecepiesByArea } from '../hooks/useGetRecepiesByArea';
+import RecepieCard from '../components/common/RecepieCard';
 
 const Area = () => {
     const { value, loading, error } = useGetAreas();
@@ -37,7 +38,13 @@ const Area = () => {
                         ?
                         <p>loading..</p>
                         :
-                        recepies?.map(recepie => <h1>{recepie.strMeal}</h1>)
+                        recepies?.map((recepie, index) =>
+                            <RecepieCard
+                                image={recepie.strMealThumb}
+                                recepieId={recepie.idMeal}
+                                recepieName={recepie.strMeal}
+                                key={`${index}__area`}
+                            />)
             }
         </div>
     )
