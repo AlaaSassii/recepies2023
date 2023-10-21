@@ -11,8 +11,8 @@ const Welcome = () => {
                 <p>Let's embark on a flavorful expedition together and savor the joys of cooking!</p>
 
                 <div className="buttons">
-                    <button type="button">Browse Meals</button>
-                    <button className="shop__btn">Shop Now</button>
+                    <button type="button">Browse Recepies</button>
+                    <button className="shop__btn">Search Recepies</button>
                 </div>
             </div>
         </div>
