@@ -39,7 +39,8 @@
         min-height: auto;
         max-height: 200px;
         overflow-y: auto;
-        >p{
+        >li{
+            list-style: none;
             padding: 5px;
             &:hover{
                 background-color: #cecece;

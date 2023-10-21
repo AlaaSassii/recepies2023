@@ -53,7 +53,7 @@ const SelectDropdown: FC<SelectDropDownProps> = ({
                     <div className="not__selected__elements">
                         {elements
                             .filter(element => element.toLocaleLowerCase().includes(selectDropDownValue ? selectDropDownValue.toLocaleLowerCase() : inputValue.toLocaleLowerCase()))
-                            .map(element => <p key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</p>)}
+                            .map(element => <li key={`${element}__notSlected`} onClick={() => handleSelect(element)}>{element}</li>)}
                     </div >
                     :
                     null

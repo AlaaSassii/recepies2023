@@ -2,11 +2,18 @@ import './Welcome.scss'
 const Welcome = () => {
     return (
         <div className='welcome'>
-            <div className="container">
-                <h1>Welcome <span>Recepies</span></h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi voluptate asperiores vitae molestias cum ab vel omnis, eveniet reiciendis, laboriosam repudiandae enim ut eaque rem esse alias sequi voluptatum est maiores aliquam nemo incidunt veniam voluptatibus. Facere dolore blanditiis odio.
-                </p>
+            <div className="content">
+                <h1>Welcome to Our Recipe Wonderland</h1>
+                <p>Welcome to Our Recipe Wonderland! Dive into the delightful world of culinary creativity and gastronomic adventures. Here, you'll uncover a treasure trove of delectable recipes, cooking tips, and food inspiration. Whether you're a seasoned chef or a novice in the kitchen, our website is your culinary sanctuary.</p>
+
+                <p>Explore the vast array of dishes, from the classics to the avant-garde, and let your taste buds embark on a mouthwatering journey. Thank you for choosing us as your go-to recipe source.</p>
+
+                <p>Let's embark on a flavorful expedition together and savor the joys of cooking!</p>
+
+                <div className="buttons">
+                    <button type="button">Browse Meals</button>
+                    <button className="shop__btn">Shop Now</button>
+                </div>
             </div>
         </div>
     )

@@ -21,7 +21,16 @@
   --text-color: #e3f5fc;
   --component-bg-color: #202020 ;
 }
+p,h1,h2,h3,h4,h5,h6{
+  color: var(--text-color);
+}
+input::value{
+  color: var(--text-color);
 
+}
+.info{
+  background-color: var(--component-bg-color);
+}
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);

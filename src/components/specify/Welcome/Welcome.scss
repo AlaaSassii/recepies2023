@@ -1,9 +1,63 @@
-@import '../../../scss/main.scss';
-.welcome{
-    padding: 40px 0;
+.welcome {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/images/burgerImage.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; // Set text color to white or any other color that works with the background
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // You can adjust the height to your preference
+    text-align: center; // Center-align the text
+    padding: 20px; // Add some padding to the content
+    font-size: 1.5rem; // Set the font size for your content
+  
+    .content {
+      max-width: 80%; // Adjust the maximum width to your preference
+    }
+  
     h1 {
-        font-size: 80px;
-        @include textGradient(red,deepskyblue)
+      font-size: 2.5rem; // Customize the heading font size
+      margin-bottom: 10px; // Add spacing between elements
+      @media(width<=911px){
+        font-size: large;
+      }
+    }
+  
+    p {
+        font-size: medium;
+      margin-bottom: 10px; // Add spacing between paragraphs
+      @media(width<=911px){
+        font-size: small;
+        text-align: center;
+      }
+    }
+  
+    .buttons {
+      margin-top: 20px; 
+      
+      button {
+        background: #fff; // Button background color
+        color: #000; // Button text color
+        padding: 10px 20px; // Customize button padding
+        margin-right: 10px; // Add spacing between buttons
+        border: none; // Remove button border if needed
+        cursor: pointer;
+        border-radius: 20px;
+        background-color: black;
+        color: white;
+        
+      }
+      .shop__btn{
+        background-color: var(--main-color);
+      }
     }
 
-}
+    @media(max-width:991px){
+      font-size: x-small !important;
+      width: 100%;
+      .content {
+        width: 100%;// Adjust the maximum width to your preference
+      }
+    }
+  }
+  
