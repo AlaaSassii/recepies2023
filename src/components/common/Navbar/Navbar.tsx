@@ -20,7 +20,7 @@ const Navbar = () => {
                         <li><NavLink to='/'><AiFillHome /><div>Home</div></NavLink></li>
                         <li><NavLink to='/search-recipes'  > <BiSearch /><div>Recipes Search</div></NavLink></li>
                         <li><NavLink to='/random-recipe'  ><GiPerspectiveDiceSixFacesRandom /><div>Random Recipe</div></NavLink></li>
-                        <li><NavLink to='/search-recipes-by'><GiMeal /><div>Cuisine Recepie</div></NavLink></li>
+                        <li><NavLink to='/search-recipes-by'><GiMeal /><div>Cuisine Recipes</div></NavLink></li>
                         <li><NavLink to='/contact-us'  ><AiOutlineMail /><div>Contact Us</div></NavLink></li>
 
                     </ul>

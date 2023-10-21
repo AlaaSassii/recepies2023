@@ -17,10 +17,10 @@ const RecepieCard: FC<recepieeCardType> = ({ image, recepieId, recepieName, cate
                 <img src={image} />
             </div>
             <div className="info">
-                <p><b>Recepie Name: </b>{recepieName}</p>
+                <p><b>Recipe Name: </b>{recepieName}</p>
                 {
                     (category && region) &&
-                    <p>This recepie is belongs to <b>{category}</b> category and from <b>{region}</b> region</p>
+                    <p>This recipe is belongs to <b>{category}</b> category and from <b>{region}</b> region</p>
                 }
                 <button className='recepie__card__button' onClick={() => { navigate(`/recepie-info/${recepieId}`) }}><div>Learn More</div><BsArrowRight /></button>
             </div>
