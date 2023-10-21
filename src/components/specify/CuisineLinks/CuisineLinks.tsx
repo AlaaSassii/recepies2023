@@ -5,11 +5,11 @@ const CuisineLinks = () => {
     return (
         <div className="container  cuisine__page">
             <div className="cuisine__links">
-                <NavLink to='/search-recepies-by/categories' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Categories</NavLink>
+                <NavLink to='/search-recipes-by/categories' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Categories</NavLink>
                 <br />
-                <NavLink to='/search-recepies-by/area' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Area</NavLink>
+                <NavLink to='/search-recipes-by/area' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Area</NavLink>
                 <br />
-                <NavLink to='/search-recepies-by/ingredient' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Ingredient</NavLink>
+                <NavLink to='/search-recipes-by/ingredient' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Ingredient</NavLink>
             </div>
             <Outlet />
         </div>

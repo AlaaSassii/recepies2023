@@ -17,11 +17,11 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/search-recepies' element={<SearchMeal />} />
-        <Route path='/recepie-info/:id' element={<MealInfo />} />
-        <Route path='/random-recepie' element={<RandomRecepie />} />
+        <Route path='/search-recipes' element={<SearchMeal />} />
+        <Route path='/recipe-info/:id' element={<MealInfo />} />
+        <Route path='/random-recipe' element={<RandomRecepie />} />
         <Route path="contact-us" element={<Contact />} />
-        <Route path="search-recepies-by" element={<CuisineLinks />}>
+        <Route path="search-recipes-by" element={<CuisineLinks />}>
           <Route path='categories' element={<Categories />} />
           <Route path='area' element={<Area />} />
           <Route path='ingredient' element={<Ingredient />} />

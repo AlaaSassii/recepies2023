@@ -21,16 +21,20 @@ const SearchMeal = () => {
                         :
                         <div className='recepies'>
                             {
-                                recipes?.map((v, index) =>
-                                    <RecepieCard
-                                        recepieId={v.idMeal}
-                                        image={v.strMealThumb}
-                                        recepieName={v.strMeal}
-                                        category={v.strCategory}
-                                        region={v.strArea}
-                                        key={`${index}__meals__search`}
-                                    />
-                                )
+                                recipes?.length
+                                    ?
+                                    recipes?.map((v, index) =>
+                                        <RecepieCard
+                                            recepieId={v.idMeal}
+                                            image={v.strMealThumb}
+                                            recepieName={v.strMeal}
+                                            category={v.strCategory}
+                                            region={v.strArea}
+                                            key={`${index}__meals__search`}
+                                        />
+                                    )
+                                    :
+                                    <h1>No Recipe Found</h1>
                             }
                         </div>
 

@@ -79,3 +79,14 @@ body{
     cursor: pointer;
   }
  }
+
+ .recepies{
+  >h1{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;    
+    @media(width <= 991px){
+      font-size: large;
+    }
+  }
+ }
