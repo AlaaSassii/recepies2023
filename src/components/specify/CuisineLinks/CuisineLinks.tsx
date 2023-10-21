@@ -3,7 +3,7 @@ import './CuisineLinks.scss'
 const CuisineLinks = () => {
 
     return (
-        <div className="container ">
+        <div className="container  cuisine__page">
             <div className="cuisine__links">
                 <NavLink to='/search-recepies-by/categories' className={({ isActive }) => isActive ? 'active' : 'inactive'}>Categories</NavLink>
                 <br />

@@ -11,8 +11,17 @@
     .youtube__video{
         width: fit-content;
         margin: auto;
+        text-align: center;
         a{
             color: deepskyblue;
         }
+    }
+}
+@media (width <= 911px){
+    .recepie__info__description{
+        text-align: center;
+    }
+    p{
+        text-align: left;
     }
 }

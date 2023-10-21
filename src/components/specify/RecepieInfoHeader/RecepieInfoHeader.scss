@@ -10,7 +10,9 @@
             height: 100%;
             object-fit: cover;
         }
-        
+        @media (width <= 991px) {
+            width: 100%;
+        }
     }
     .ingredients__table{
         background-color: var(--text-color);
@@ -36,6 +38,7 @@
             }
         }
         .ingredients__table{
+            margin-top: 20px;
             background-color: var(--text-color);
             color: var(--text-color);
             width: 350px;

@@ -3,6 +3,10 @@
     background-color: white;
     width: 350px;
     margin: 10px auto 20px;
+    @media(width <= 991px){
+        transform: translateX(-5px);
+        width: 300px;
+    }
     .dropdown__main{
         display: flex;
         >input{

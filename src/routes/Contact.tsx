@@ -18,15 +18,21 @@ const Contact = () => {
     alert(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
   }
   return (
-    <form className='contact__form container' onSubmit={handleSubmit}>
-      <div className="user_data">
-        <input type="text" placeholder='name' ref={inputNameRef} />
-        <input type="email" placeholder='email' ref={inputEmailRef} />
+    <div className="container contact__container ">
+      <div className="text">
+        <h1>Get in Touch with Us for All Your Meal and Recipe Queries</h1>
+        <p>If you have any questions, suggestions, or simply want to connect with us about all things meals and recipes, we're here to listen. Our team of culinary enthusiasts is eager to assist you in your culinary journey. Whether you're seeking expert advice, looking for specific recipes, or need assistance with any meal-related queries, we've got you covered. Your feedback and inquiries are invaluable to us, and we can't wait to help you explore the wonderful world of flavors and delicious cuisine. Reach out to us, and let's embark on this flavorful adventure together.</p>
       </div>
-      <input type="text" placeholder='subject' ref={inputSubjetRef} />
-      <textarea placeholder='message' ref={inputMessageRef} rows={10}></textarea>
-      <button type='submit'>Submit</button>
-    </form>
+      <form className='contact__form ' onSubmit={handleSubmit}>
+        <div className="user_data">
+          <input type="text" placeholder='name' ref={inputNameRef} />
+          <input type="email" placeholder='email' ref={inputEmailRef} />
+        </div>
+        <input type="text" placeholder='subject' ref={inputSubjetRef} />
+        <textarea placeholder='message' ref={inputMessageRef} rows={10}></textarea>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
   )
 };
 
