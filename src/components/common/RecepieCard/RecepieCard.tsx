@@ -22,11 +22,11 @@ const RecepieCard: FC<recepieeCardType> = ({ image, recepieId, recepieName, cate
                     (category && region) &&
                     <p>This recipe is belongs to <b>{category}</b> category and from <b>{region}</b> region</p>
                 }
-                <button className='recepie__card__button' onClick={() => { navigate(`/recepie-info/${recepieId}`) }}><div>Learn More</div><BsArrowRight /></button>
+                <button className='recepie__card__button' onClick={() => { navigate(`/recipe-info/${recepieId}`) }}><div>Learn More</div><BsArrowRight /></button>
             </div>
         </div>
     )
 }
 
 export default RecepieCard
-// /recepie-info/:id
+// /recepie-info/:id asd
