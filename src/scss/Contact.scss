@@ -2,6 +2,11 @@
 .contact__container{
     margin-top: 100px;
     padding-bottom: 20px;
+    @media(max-width:991px){
+        width: 90%;
+        margin: auto;
+        margin-top: 100px;
+    }
     h1{
         font-size: medium;
         padding: 0 0 10px;
