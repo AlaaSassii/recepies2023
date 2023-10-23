@@ -11,34 +11,34 @@ const SearchMeal = () => {
     return (
         <PageContainer>
             <InputSearch handleChange={handleChangeMealValue} value={name} />
-            {
-                error ?
-                    <p>{error}</p>
-                    :
-                    loading
-                        ?
-                        <Loading />
+            <div className='recepies'>
+                {
+                    error ?
+                        <p>{error}</p>
                         :
-                        <div className='recepies'>
-                            {
-                                recipes?.length
-                                    ?
-                                    recipes?.map((v, index) =>
-                                        <RecepieCard
-                                            recepieId={v.idMeal}
-                                            image={v.strMealThumb}
-                                            recepieName={v.strMeal}
-                                            category={v.strCategory}
-                                            region={v.strArea}
-                                            key={`${index}__meals__search`}
-                                        />
-                                    )
-                                    :
-                                    <h1>No Recipe Found</h1>
-                            }
-                        </div>
+                        loading
+                            ?
+                            <Loading />
+                            :
 
-            }
+                            recipes?.length
+                                ?
+                                recipes?.map((v, index) =>
+                                    <RecepieCard
+                                        recepieId={v.idMeal}
+                                        image={v.strMealThumb}
+                                        recepieName={v.strMeal}
+                                        category={v.strCategory}
+                                        region={v.strArea}
+                                        key={`${index}__meals__search`}
+                                    />
+                                )
+                                :
+                                <h1>No Recipe Found</h1>
+
+
+                }
+            </div>
         </PageContainer>
     )
 }

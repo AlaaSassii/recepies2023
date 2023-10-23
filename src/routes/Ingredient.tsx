@@ -2,6 +2,7 @@ import useGetIngredients from '../hooks/useGetIngredients';
 import SelectDropdown from '../components/common/SelectDropdown';
 import { useGetRecepieByIngredient } from '../hooks/useGetRecepiesByIngredient';
 import RecepieCard from '../components/common/RecepieCard';
+import Loading from '../components/common/Loading';
 
 const Ingredient = () => {
     const { value, loading, error } = useGetIngredients();
@@ -31,7 +32,7 @@ const Ingredient = () => {
                     :
                     recepiesPending
                         ?
-                        <p>loading..</p>
+                        <Loading />
                         :
                         recepies?.map((recepie, index) =>
                             <RecepieCard

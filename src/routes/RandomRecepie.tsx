@@ -2,6 +2,8 @@ import useGetRandomRecepie from '../hooks/useGetRandomRecepie'
 import { IoReloadOutline } from 'react-icons/io5'
 import RecepieInfoHeader from '../components/specify/RecepieInfoHeader'
 import RecepieInfoDescription from '../components/specify/RecepieInfoDescription'
+import Loading from '../components/common/Loading'
+import PageContainer from '../components/common/PageContainer'
 const RandomRecepie = () => {
     const { randomRecepie, loading, error, getRandomRecpieFunction } = useGetRandomRecepie()
 
@@ -15,7 +17,7 @@ const RandomRecepie = () => {
 
     console.log({ strMealThumb: randomRecepie?.strMealThumb, ingredients, ingredientsAmount, randomRecepie })
     return (
-        <div className='container'>
+        <PageContainer>
             {
                 error
                     ?
@@ -23,7 +25,7 @@ const RandomRecepie = () => {
                     :
                     loading
                         ?
-                        <div>loading..</div>
+                        <Loading />
                         :
                         <div className="meal__info">
                             <div className='recepie__info'>
@@ -43,7 +45,7 @@ const RandomRecepie = () => {
 
                         </div>
             }
-        </div>
+        </PageContainer>
     )
 }
 
