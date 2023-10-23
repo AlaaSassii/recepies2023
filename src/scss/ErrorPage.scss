@@ -1,0 +1,45 @@
+.page__not__found{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    h1{
+        color: var(--text-color);
+    }
+    text-align: center;
+    @media(max-width:991px){
+    transform: translate(-50%,-60%);
+
+    }
+    h1{
+        color: var(--main-color);
+        font-size:80px;
+        }
+        p{
+            font-size: medium;
+            padding-bottom: 10px;
+        }
+        button{
+            border-radius: 20px;
+            width: fit-content;
+            padding: 5px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            background-color: #000;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        @media(max-width:991px){
+            h1{
+            font-size:40px;
+            }
+            p{
+                font-size: small;
+            }
+        }
+}
+.error_page__container{
+    height: calc(100vh - 180px);
+}

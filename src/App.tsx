@@ -10,6 +10,7 @@ import Area from './routes/Area'
 import Ingredient from './routes/Ingredient';
 import Contact from './routes/Contact';
 import RandomRecepie from './routes/RandomRecepie'
+import ErrorPage from './routes/ErrorPage'
 const App = () => {
   return (
     <>
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='area' element={<Area />} />
           <Route path='ingredient' element={<Ingredient />} />
         </Route>
+        <Route path="*" element={<ErrorPage />} />
 
       </Routes>
       <Footer />
