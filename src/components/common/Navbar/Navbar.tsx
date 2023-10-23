@@ -24,7 +24,7 @@ const Navbar = () => {
                         <li><NavLink to='/contact-us'  ><AiOutlineMail /><div>Contact Us</div></NavLink></li>
 
                     </ul>
-                    <button onClick={toggleTheme}>{theme === 'theme-light' ? <BsSunFill /> : <BsFillMoonStarsFill />}</button>
+                    <button onClick={toggleTheme}>{theme === 'theme-light' ? <BsFillMoonStarsFill /> : <BsSunFill />}</button>
                 </div>
             </div>
         </nav>
